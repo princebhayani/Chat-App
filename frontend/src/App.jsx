@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+// npm run server = backend
+// npm run dev = frontend
+
 function App() {
   const [count, setCount] = useState(0)
 
