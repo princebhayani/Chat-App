@@ -11,12 +11,12 @@ const SignUp = () => {
 		gender: "",
 	});
 
-	const {loading, signup} = useSignup();
-	const handleCheckboxChange = (gender) =>{
-		setInputs({...inputs,gender})
+	const { loading, signup } = useSignup();
+	const handleCheckboxChange = (gender) => {
+		setInputs({ ...inputs, gender })
 	}
 
-	const handleSubmit = async (e)=>{
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		// console.log(inputs);
 		await signup(inputs);
@@ -39,7 +39,7 @@ const SignUp = () => {
 							placeholder="Rahul Modi"
 							className="w-full input input-bordered  h-10"
 							value={inputs.fullName}
-							onChange={(e)=> setInputs({...inputs, fullName:e.target.value})}
+							onChange={(e) => setInputs({ ...inputs, fullName: e.target.value })}
 						/>
 					</div>
 
@@ -52,7 +52,7 @@ const SignUp = () => {
 							placeholder="rahulmodi"
 							className="w-full input input-bordered h-10"
 							value={inputs.username}
-							onChange={(e)=> setInputs({...inputs, username:e.target.value})}
+							onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
 						/>
 					</div>
 
@@ -65,7 +65,7 @@ const SignUp = () => {
 							placeholder="Enter Password"
 							className="w-full input input-bordered h-10"
 							value={inputs.password}
-							onChange={(e)=> setInputs({...inputs, password:e.target.value})}
+							onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
 						/>
 					</div>
 
@@ -78,11 +78,11 @@ const SignUp = () => {
 							placeholder="Confirm Password"
 							className="w-full input input-bordered h-10"
 							value={inputs.confirmPassword}
-							onChange={(e)=> setInputs({...inputs, confirmPassword:e.target.value})}
+							onChange={(e) => setInputs({ ...inputs, confirmPassword: e.target.value })}
 						/>
 					</div>
 
-					<GenderCheckbox onCheckboxChange={handleCheckboxChange} selectedGender={inputs.gender}/>
+					<GenderCheckbox onCheckboxChange={handleCheckboxChange} selectedGender={inputs.gender} />
 
 					<Link
 						to="/login"
@@ -93,8 +93,8 @@ const SignUp = () => {
 					</Link>
 
 					<div>
-						<button className="btn btn-block btn-sm mt-2 border border-slate-700">
-							Sign Up
+						<button className="btn btn-block btn-sm mt-2 border border-slate-700" disabled={loading}>
+							{loading ?<span className="loading loading-spinner"></span> :"Sign Up"}
 						</button>
 					</div>
 				</form>
