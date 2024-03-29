@@ -12,6 +12,7 @@
   "dependencies": {
     "@tsparticles/all": "^3.3.0",
     "@tsparticles/react": "^3.0.0",
+    "chat-app": "file:..",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
