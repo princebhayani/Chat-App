@@ -9,8 +9,9 @@ import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js";
 
 import connectToMongoDB from "./db/connectToMongoDB.js";
+import { app, server } from "./socket/socket.js";
 
-const app = express();
+
 app.use(express.json()); // to parse the incoming request with JSON payload(from req.body)
 const PORT = process.env.PORT || 5000;
 app.use(cookieParser());
@@ -23,7 +24,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/message", messageRoutes);
 app.use("/api/users", userRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     connectToMongoDB();
   console.log(`server running on port ${PORT}!!`);
 });
