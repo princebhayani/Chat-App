@@ -5,13 +5,16 @@ import Login from './pages/login/Login'
 import SignUp from './pages/signup/SignUp'
 import {Toaster} from "react-hot-toast"
 import { useAuthContext } from './context/AuthContext'
+import ParticlesComponent from './components/particles/particles'
 // npm run server = backend
 // npm run dev = frontend
+
 
 function App() {
   const {authUser} = useAuthContext();
   return (
     <div className='p-4 h-screen flex items-center justify-center'>
+      <ParticlesComponent id='particles' />
       <Routes>
         <Route path='/' element={authUser?<Home />:<Navigate to="/login" /> } />
         <Route path='/login' element={authUser?<Navigate to="/" /> :<Login />} />
